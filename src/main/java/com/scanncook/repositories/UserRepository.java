@@ -8,6 +8,6 @@ import com.scanncook.models.User;
 
 public interface UserRepository extends JpaRepository<User, Long>{
 
-	Optional<User> findByTitle(String title);
+	Optional<User> findByFirstname(String name);
 
 }

@@ -29,7 +29,7 @@ public class UserService {
 	}
 	
 	public Optional<User> getByTitle(String title){
-		return userRepository.findByTitle(title);
+		return userRepository.findByFirstname(title);
 	}
 	
 	public void delete(User user) {

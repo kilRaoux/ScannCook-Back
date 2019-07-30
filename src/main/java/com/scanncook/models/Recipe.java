@@ -1,42 +1,58 @@
 package com.scanncook.models;
 
-import java.sql.Time;
-import java.sql.Timestamp;
+import java.sql.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.Id;
 
 import lombok.Data;
+import lombok.ToString;
 
-@Entity
 @Data
+@Entity
+@ToString
 public class Recipe {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	@NotNull
-	private String title;
+	private String name;
 	private String description;
 	
-	@ManyToOne
-	private User author;
-	
-	@ManyToMany
-	private List<Ingredient> ingredients;
-	
-	@UpdateTimestamp
-	private Timestamp lastupdate;
+	//@ManyToOne
+	private long authorid;
 
 	@NotNull
 	@CreatedDate
-	private Timestamp creationdate;
+	private Date creationdate;
+	
+	@ManyToMany(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+        })
+	private List<IngredientCount> ingredientCounts;
+	
+	@ManyToMany(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+        })
+	private List<Tag> tags;
+	
+	@Transient
+	private List<RecipeComment> comments;
 }
+

@@ -5,6 +5,8 @@ import java.util.Optional;
 
 import javax.validation.constraints.Positive;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,18 +22,30 @@ import com.scanncook.services.UserService;
 import lombok.Delegate;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/users")
 public class UserController {
 	
 	@Autowired
 	private UserService userService;
+	private Logger logger = LogManager.getLogger();
 	
-	@GetMapping("/")
-	public List<User> getAll(){
+	@GetMapping("")
+	public List<User> findAll(){
+		logger.info("DEBUG");
 		return userService.getAll();
 	}
 	
-	@GetMapping("/id/{id}")
+	@PostMapping("")
+	public void save(@RequestBody User user) {
+		userService.save(user);
+	}
+	
+	@DeleteMapping("")
+	public void delete(@RequestBody User user) {
+		userService.delete(user);
+	}
+	
+	@GetMapping("/{id}")
 	public Optional<User> getById(@PathVariable Long id) {
 		return userService.getById(id);
 	}
@@ -41,13 +55,4 @@ public class UserController {
 		return null;
 	}
 	
-	@PostMapping
-	public void save(@RequestBody User user) {
-		userService.save(user);
-	}
-	
-	@DeleteMapping("/delete")
-	public void delete(@RequestBody User user) {
-		userService.delete(user);
-	}
 }
