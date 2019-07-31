@@ -1,15 +1,12 @@
-package com.scanncook.services.implementation;
+package com.scanncook.services.ingredient;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import com.scanncook.models.Ingredient;
-import com.scanncook.models.RecipeIngredient;
-import com.scanncook.repositories.RecipeIngredientRepository;
-import com.scanncook.repositories.IngredientRepository;
+import com.scanncook.repositories.ingredient.IngredientRepository;
 
 
 @Service

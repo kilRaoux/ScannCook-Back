@@ -3,8 +3,6 @@ package com.scanncook.controllers;
 import java.util.List;
 import java.util.Optional;
 
-import javax.validation.constraints.Positive;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,9 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.scanncook.models.User;
-import com.scanncook.services.implementation.UserServiceImpl;
-
-import lombok.Delegate;
+import com.scanncook.services.user.UserServiceImpl;
 
 @RestController
 @RequestMapping("/users")

@@ -1,6 +1,5 @@
-package com.scanncook.services.implementation;
+package com.scanncook.services.user;
 
-import java.security.cert.PKIXRevocationChecker.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -8,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.scanncook.models.User;
-import com.scanncook.repositories.UserRepository;
+import com.scanncook.repositories.user.UserRepository;
 
 @Service
 public class UserServiceImpl {

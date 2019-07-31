@@ -10,8 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.scanncook.models.Ingredient;
-import com.scanncook.repositories.RecipeIngredientRepository;
-import com.scanncook.services.implementation.IngredientServiceImpl;
+import com.scanncook.services.ingredient.IngredientServiceImpl;
 
 @RestController
 @RequestMapping("/ingredients")

@@ -1,8 +1,7 @@
-package com.scanncook.services;
+package com.scanncook.services.recipe_ingredient;
 
 import java.util.List;
 
-import com.scanncook.models.Recipe;
 import com.scanncook.models.RecipeIngredient;
 
 public interface RecipeIngredientService {

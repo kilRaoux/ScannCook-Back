@@ -11,7 +11,7 @@ import lombok.Data;
 
 @Entity
 @Data
-public class RecipeComment {
+public class Comment {
 
 	@Id
 	private long id;

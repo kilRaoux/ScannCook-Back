@@ -1,4 +1,4 @@
-package com.scanncook.services.implementation;
+package com.scanncook.services.recipe_ingredient;
 
 import java.util.List;
 
@@ -6,11 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.scanncook.models.RecipeIngredient;
-import com.scanncook.models.Ingredient;
-import com.scanncook.models.Recipe;
-import com.scanncook.repositories.IngredientRepository;
 import com.scanncook.repositories.RecipeIngredientRepository;
-import com.scanncook.services.RecipeIngredientService;
+import com.scanncook.repositories.ingredient.IngredientRepository;
 
 @Service
 public class RecipeIngredientServiceImpl implements RecipeIngredientService{
@@ -20,9 +17,6 @@ public class RecipeIngredientServiceImpl implements RecipeIngredientService{
 	
 	@Autowired
 	private IngredientRepository ingredientRepository;
-	
-	@Autowired
-	private IngredientServiceImpl ingredientService;
 	
 	public void save(RecipeIngredient count, long recipeid) {
 		count.setRecipeid(recipeid);

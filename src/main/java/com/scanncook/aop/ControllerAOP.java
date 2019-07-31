@@ -13,8 +13,9 @@ import org.springframework.stereotype.Component;
 public class ControllerAOP {
 
 	private static Logger logger = LogManager.getLogger(ControllerAOP.class);
-	@Before("execution(* com.scanncook.controllers.*Controller.getAll(..))")
+	@Before("execution(* com.scanncook.controllers.*Controller.*(..))")
 	public void beforeGET(JoinPoint jp) {
 		logger.info("HTTP:GET>"+jp.getTarget());
+		System.out.println("AOP");
 	}
 }

@@ -1,8 +1,6 @@
-package com.scanncook.repositories.custom.implementations;
+package com.scanncook.repositories.recipe;
 
 import org.springframework.stereotype.Repository;
-
-import com.scanncook.repositories.custom.RecipeCustomRepository;
 
 @Repository
 public class RecipeCustomRepositoryImpl implements RecipeCustomRepository{

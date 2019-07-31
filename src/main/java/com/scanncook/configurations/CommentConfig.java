@@ -4,15 +4,15 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
-import com.scanncook.services.recipe.RecipeService;
-import com.scanncook.services.recipe.RecipeServiceImpl;
+import com.scanncook.services.comment.CommentService;
+import com.scanncook.services.comment.CommentServiceImpl;
 
 @Configuration
-public class RecipeConfig {
+public class CommentConfig {
 
-	@Bean
 	@Primary
-	public RecipeService newService() {
-		return new RecipeServiceImpl();
+	@Bean
+	public CommentService newCommentService() {
+		return new CommentServiceImpl();
 	}
 }

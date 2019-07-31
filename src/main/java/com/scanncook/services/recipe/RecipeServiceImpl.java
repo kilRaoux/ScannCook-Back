@@ -1,6 +1,7 @@
-package com.scanncook.services.implementation;
+package com.scanncook.services.recipe;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Optional;
@@ -8,11 +9,12 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.scanncook.models.RecipeIngredient;
 import com.scanncook.models.Recipe;
-import com.scanncook.repositories.RecipeRepository;
-import com.scanncook.services.RecipeIngredientService;
-import com.scanncook.services.RecipeService;
+import com.scanncook.models.RecipeIngredient;
+import com.scanncook.models.Tag;
+import com.scanncook.repositories.recipe.RecipeRepository;
+import com.scanncook.services.recipe_ingredient.RecipeIngredientService;
+import com.scanncook.services.tag.TagService;
 
 
 @Service
@@ -21,6 +23,9 @@ public class RecipeServiceImpl implements RecipeService{
 	@Autowired
 	private RecipeRepository recipeRepository;
 
+	@Autowired
+	private TagService tagService;
+	
 	@Autowired
 	private RecipeIngredientService recipeIngredientService;
 	
@@ -61,5 +66,17 @@ public class RecipeServiceImpl implements RecipeService{
 		}
 		return recipes;
 	}
-
+	
+	public List<Recipe> findAllByTag(String tagName){
+		return recipeRepository.findAllByTags(tagService.findByName(tagName));
+		
+	}
+	
+	public List<Tag> findTags(long id){
+		Optional<Recipe> recipe = recipeRepository.findById(id);
+		if (recipe.isPresent())
+			return recipe.get().getTags();
+		else
+			return new ArrayList<Tag>();
+	}
 }

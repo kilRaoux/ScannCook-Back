@@ -13,9 +13,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.scanncook.models.Recipe;
+import com.scanncook.models.RecipeIngredient;
 import com.scanncook.models.RecipeSearch;
-import com.scanncook.services.RecipeService;
-import com.scanncook.services.implementation.RecipeServiceImpl;
+import com.scanncook.models.Tag;
+import com.scanncook.services.recipe.RecipeService;
+import com.scanncook.services.recipe_ingredient.RecipeIngredientService;
 
 @RestController
 @RequestMapping("/recipes")
@@ -23,6 +25,8 @@ public class RecipeController {
 
 	@Autowired
 	private RecipeService recipeService;
+	@Autowired
+	private RecipeIngredientService recipeIngredientService;
 	
 	@GetMapping("")
 	public List<Recipe> findAll(){
@@ -44,6 +48,16 @@ public class RecipeController {
 		return recipeService.findById(id);
 	}
 	
+	@GetMapping("/{id}/ingredients")
+	public List<RecipeIngredient> findIngredients(@PathVariable Long id) {
+		return recipeIngredientService.findAllByRecipeid(id);
+	}
+	
+	@GetMapping("/{id}/tags")
+	public List<Tag> findTags(@PathVariable Long id) {
+		return recipeService.findTags(id);
+	}
+	
 	@GetMapping("/title/{title}")
 	public Optional<Recipe> getByTitle(@PathVariable String title){
 		return null;
@@ -52,6 +66,12 @@ public class RecipeController {
 	@GetMapping("/search")
 	public List<Recipe> search(@RequestBody RecipeSearch recipeSearch){
 		System.out.println(recipeSearch);
+		return null;
+		
+	}
+	
+	@GetMapping("/tags/{tag}")
+	public List<Recipe> findAllByTags(@PathVariable String tagname){
 		return null;
 		
 	}

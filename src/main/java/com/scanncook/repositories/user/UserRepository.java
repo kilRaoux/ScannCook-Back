@@ -1,4 +1,4 @@
-package com.scanncook.repositories;
+package com.scanncook.repositories.user;
 
 import java.util.Optional;
 
