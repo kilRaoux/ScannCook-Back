@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.scanncook.models.Recipe;
 import com.scanncook.services.RecipeService;
+import com.scanncook.services.implementation.RecipeServiceImpl;
 
 @RestController
 @RequestMapping("/recipes")
@@ -23,8 +24,8 @@ public class RecipeController {
 	private RecipeService recipeService;
 	
 	@GetMapping("")
-	public List<Recipe> getAll(){
-		return recipeService.getAll();
+	public List<Recipe> findAll(){
+		return recipeService.findAll();
 	}
 
 	@PostMapping("")
@@ -39,7 +40,7 @@ public class RecipeController {
 	
 	@GetMapping("/{id}")
 	public Optional<Recipe> getById(@PathVariable Long id) {
-		return recipeService.getById(id);
+		return recipeService.findById(id);
 	}
 	
 	@GetMapping("/title/{title}")

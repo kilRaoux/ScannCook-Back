@@ -1,4 +1,5 @@
-{
+[
+    {
     "name":"Chocolat au lait",
     "ingredientCount":[
         {
@@ -18,11 +19,26 @@
             }
         }
     ]
+},
+    {
+        "name":"Chocolat au lait",
+        "ingredientCount":[
+            {
+                "count":50,
+                "unit":"g",
+                "ingredient":{
+                    "id": 4,
+                    "name": "Chocolat"
+                }
+            },
+            {
+                "count":200,
+                "unit":"ml",
+                "ingredient":{
+                    "id": 7,
+                    "name": "Lait"
+                }
+            }
+        ]
 }
-
-
-,
-{
-    "id": 4,
-    "name": "Chocolat"
-}
+]

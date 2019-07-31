@@ -40,11 +40,8 @@ public class Recipe {
 	@CreatedDate
 	private Date creationdate;
 	
-	@ManyToMany(cascade = {
-            CascadeType.PERSIST,
-            CascadeType.MERGE
-        })
-	private List<IngredientCount> ingredientCounts;
+	@Transient
+	private List<RecipeIngredient> ingredients;
 	
 	@ManyToMany(cascade = {
             CascadeType.PERSIST,

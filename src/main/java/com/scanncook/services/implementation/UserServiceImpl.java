@@ -1,4 +1,4 @@
-package com.scanncook.services;
+package com.scanncook.services.implementation;
 
 import java.security.cert.PKIXRevocationChecker.Option;
 import java.util.List;
@@ -11,7 +11,7 @@ import com.scanncook.models.User;
 import com.scanncook.repositories.UserRepository;
 
 @Service
-public class UserService {
+public class UserServiceImpl {
 
 	@Autowired
 	private UserRepository userRepository;

@@ -10,15 +10,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.scanncook.models.Ingredient;
-import com.scanncook.repositories.IngredientCountRepository;
-import com.scanncook.services.IngredientService;
+import com.scanncook.repositories.RecipeIngredientRepository;
+import com.scanncook.services.implementation.IngredientServiceImpl;
 
 @RestController
 @RequestMapping("/ingredients")
 public class IngredientController {
 	
 	@Autowired
-	private IngredientService ingredientService;
+	private IngredientServiceImpl ingredientService;
 	
 	@GetMapping("")
 	public List<Ingredient> findAll() {

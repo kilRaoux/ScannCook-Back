@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.scanncook.models.User;
-import com.scanncook.services.UserService;
+import com.scanncook.services.implementation.UserServiceImpl;
 
 import lombok.Delegate;
 
@@ -26,7 +26,7 @@ import lombok.Delegate;
 public class UserController {
 	
 	@Autowired
-	private UserService userService;
+	private UserServiceImpl userService;
 	private Logger logger = LogManager.getLogger();
 	
 	@GetMapping("")
