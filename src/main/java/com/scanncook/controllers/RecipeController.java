@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.scanncook.models.Recipe;
+import com.scanncook.models.RecipeSearch;
 import com.scanncook.services.RecipeService;
 import com.scanncook.services.implementation.RecipeServiceImpl;
 
@@ -39,13 +40,20 @@ public class RecipeController {
 	}
 	
 	@GetMapping("/{id}")
-	public Optional<Recipe> getById(@PathVariable Long id) {
+	public Optional<Recipe> findById(@PathVariable Long id) {
 		return recipeService.findById(id);
 	}
 	
 	@GetMapping("/title/{title}")
 	public Optional<Recipe> getByTitle(@PathVariable String title){
 		return null;
+	}
+	
+	@GetMapping("/search")
+	public List<Recipe> search(@RequestBody RecipeSearch recipeSearch){
+		System.out.println(recipeSearch);
+		return null;
+		
 	}
 	
 }

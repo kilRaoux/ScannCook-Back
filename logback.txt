@@ -1953,3 +1953,546 @@ java.util.NoSuchElementException: No value present
 2019-07-31 14:45:40.593 DEBUG 19716 --- [http-nio-8081-exec-8] org.hibernate.SQL                        : select ingredient0_.id as id1_1_0_, ingredient0_.name as name2_1_0_ from ingredient ingredient0_ where ingredient0_.id=?
 2019-07-31 14:45:40.594 DEBUG 19716 --- [http-nio-8081-exec-8] org.hibernate.SQL                        : select tags0_.recipe_id as recipe_i1_5_0_, tags0_.tags_id as tags_id2_5_0_, tag1_.id as id1_10_1_, tag1_.name as name2_10_1_ from recipe_tags tags0_ inner join tag tag1_ on tags0_.tags_id=tag1_.id where tags0_.recipe_id=?
 2019-07-31 14:45:40.600 DEBUG 19716 --- [http-nio-8081-exec-8] org.hibernate.SQL                        : select tags0_.recipe_id as recipe_i1_5_0_, tags0_.tags_id as tags_id2_5_0_, tag1_.id as id1_10_1_, tag1_.name as name2_10_1_ from recipe_tags tags0_ inner join tag tag1_ on tags0_.tags_id=tag1_.id where tags0_.recipe_id=?
+2019-07-31 14:54:05.114  INFO 19716 --- [Thread-111] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-31 14:54:05.116  INFO 19716 --- [Thread-111] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-31 14:54:05.118  INFO 19716 --- [Thread-111] com.zaxxer.hikari.HikariDataSource       : HikariPool-19 - Shutdown initiated...
+2019-07-31 14:54:05.149  INFO 19716 --- [Thread-111] com.zaxxer.hikari.HikariDataSource       : HikariPool-19 - Shutdown completed.
+2019-07-31 14:54:05.458  INFO 19716 --- [restartedMain] com.scanncook.ScannCookBackApplication   : Starting ScannCookBackApplication on LAPTOP-9C0CP4VF with PID 19716 (C:\Dev\ScannCook\ScannCookBack\target\classes started by utilisateur2 in C:\Dev\ScannCook\ScannCookBack)
+2019-07-31 14:54:05.458  INFO 19716 --- [restartedMain] com.scanncook.ScannCookBackApplication   : No active profile set, falling back to default profiles: default
+2019-07-31 14:54:05.603  INFO 19716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-31 14:54:05.627  INFO 19716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24ms. Found 6 repository interfaces.
+2019-07-31 14:54:05.659  INFO 19716 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$802962b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-31 14:54:05.738  INFO 19716 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-07-31 14:54:05.738  INFO 19716 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-31 14:54:05.738  INFO 19716 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-31 14:54:05.747  INFO 19716 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2019-07-31 14:54:05.747  INFO 19716 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 288 ms
+2019-07-31 14:54:05.782  INFO 19716 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-20 - Starting...
+2019-07-31 14:54:05.785  INFO 19716 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-20 - Start completed.
+2019-07-31 14:54:05.793  INFO 19716 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-31 14:54:05.801  INFO 19716 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-07-31 14:54:05.861 DEBUG 19716 --- [restartedMain] org.hibernate.SQL                        : alter table user add column creationdate date
+2019-07-31 14:54:05.915 DEBUG 19716 --- [restartedMain] org.hibernate.SQL                        : alter table user add column email varchar(255)
+2019-07-31 14:54:05.960 DEBUG 19716 --- [restartedMain] org.hibernate.SQL                        : alter table user add column username varchar(255)
+2019-07-31 14:54:05.989 DEBUG 19716 --- [restartedMain] org.hibernate.SQL                        : alter table user add column role_id bigint
+2019-07-31 14:54:06.028 DEBUG 19716 --- [restartedMain] org.hibernate.SQL                        : alter table account add constraint FKd4vb66o896tay3yy52oqxr9w0 foreign key (role_id) references role (id)
+2019-07-31 14:54:06.052 DEBUG 19716 --- [restartedMain] org.hibernate.SQL                        : alter table account add constraint FK7m8ru44m93ukyb61dfxw0apf6 foreign key (user_id) references user (id)
+2019-07-31 14:54:06.108 DEBUG 19716 --- [restartedMain] org.hibernate.SQL                        : alter table product add constraint FKlq45bcfluf5q235kkyt7n4ar5 foreign key (ingredient_id) references ingredient (id)
+2019-07-31 14:54:06.156 DEBUG 19716 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_tags add constraint FKc61e34yhfyeke62qo2onb9pa8 foreign key (tags_id) references tag (id)
+2019-07-31 14:54:06.194 DEBUG 19716 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_tags add constraint FKm8d9e65tioqhbd8eanewapglx foreign key (recipe_id) references recipe (id)
+2019-07-31 14:54:06.225 DEBUG 19716 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_comment add constraint FK45ojbiwa2a7f83wd54rpwiiku foreign key (author_id) references user (id)
+2019-07-31 14:54:06.281 DEBUG 19716 --- [restartedMain] org.hibernate.SQL                        : alter table role_permissions add constraint FKclluu29apreb6osx6ogt4qe16 foreign key (permissions_id) references permission (id)
+2019-07-31 14:54:06.317 DEBUG 19716 --- [restartedMain] org.hibernate.SQL                        : alter table role_permissions add constraint FKlodb7xh4a2xjv39gc3lsop95n foreign key (role_id) references role (id)
+2019-07-31 14:54:06.347 DEBUG 19716 --- [restartedMain] org.hibernate.SQL                        : alter table user add constraint FKn82ha3ccdebhokx3a8fgdqeyy foreign key (role_id) references role (id)
+2019-07-31 14:54:06.402 DEBUG 19716 --- [restartedMain] org.hibernate.SQL                        : alter table user_recipes add constraint FK3fadqc9bwyyhroumcbecbqwpj foreign key (recipes_id) references recipe (id)
+2019-07-31 14:54:06.433 DEBUG 19716 --- [restartedMain] org.hibernate.SQL                        : alter table user_recipes add constraint FKpco0pexrpl6x78mtuukwb49g1 foreign key (user_id) references user (id)
+2019-07-31 14:54:06.461  INFO 19716 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-31 14:54:06.476  INFO 19716 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-07-31 14:54:06.618  INFO 19716 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-31 14:54:06.624  WARN 19716 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-31 14:54:06.688  INFO 19716 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-07-31 14:54:06.688  INFO 19716 --- [restartedMain] com.scanncook.ScannCookBackApplication   : Started ScannCookBackApplication in 1.245 seconds (JVM running for 8298.228)
+2019-07-31 14:54:06.688  INFO 19716 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-07-31 14:54:11.188  INFO 19716 --- [RMI TCP Connection(79)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-07-31 14:54:11.199  INFO 19716 --- [RMI TCP Connection(79)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-31 14:54:11.199  INFO 19716 --- [RMI TCP Connection(79)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-31 14:54:11.199  INFO 19716 --- [RMI TCP Connection(79)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-20 - Shutdown initiated...
+2019-07-31 14:54:11.199  INFO 19716 --- [RMI TCP Connection(79)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-20 - Shutdown completed.
+2019-07-31 14:54:22.732  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : Starting ScannCookBackApplication on LAPTOP-9C0CP4VF with PID 11336 (C:\Dev\ScannCook\ScannCookBack\target\classes started by utilisateur2 in C:\Dev\ScannCook\ScannCookBack)
+2019-07-31 14:54:22.732  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : No active profile set, falling back to default profiles: default
+2019-07-31 14:54:22.771  INFO 11336 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-07-31 14:54:22.771  INFO 11336 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-07-31 14:54:23.173  INFO 11336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-31 14:54:23.223  INFO 11336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47ms. Found 6 repository interfaces.
+2019-07-31 14:54:23.429  INFO 11336 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cb8d9a0c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-31 14:54:23.688  INFO 11336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-07-31 14:54:23.704  INFO 11336 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-31 14:54:23.704  INFO 11336 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-31 14:54:23.768  INFO 11336 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-31 14:54:23.768  INFO 11336 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 997 ms
+2019-07-31 14:54:23.869  INFO 11336 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-07-31 14:54:23.955  INFO 11336 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-07-31 14:54:24.070  INFO 11336 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-31 14:54:24.120  INFO 11336 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
+2019-07-31 14:54:24.125  INFO 11336 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-07-31 14:54:24.201  INFO 11336 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-31 14:54:24.289  INFO 11336 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-07-31 14:54:24.844 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table product add constraint FKlq45bcfluf5q235kkyt7n4ar5 foreign key (ingredient_id) references ingredient (id)
+2019-07-31 14:54:24.891 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_tags add constraint FKc61e34yhfyeke62qo2onb9pa8 foreign key (tags_id) references tag (id)
+2019-07-31 14:54:24.922 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_tags add constraint FKm8d9e65tioqhbd8eanewapglx foreign key (recipe_id) references recipe (id)
+2019-07-31 14:54:24.972 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_comment add constraint FK45ojbiwa2a7f83wd54rpwiiku foreign key (author_id) references user (id)
+2019-07-31 14:54:25.018 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table role_permissions add constraint FKclluu29apreb6osx6ogt4qe16 foreign key (permissions_id) references permission (id)
+2019-07-31 14:54:25.066 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table role_permissions add constraint FKlodb7xh4a2xjv39gc3lsop95n foreign key (role_id) references role (id)
+2019-07-31 14:54:25.111 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user add constraint FKn82ha3ccdebhokx3a8fgdqeyy foreign key (role_id) references role (id)
+2019-07-31 14:54:25.160 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user_recipes add constraint FK3fadqc9bwyyhroumcbecbqwpj foreign key (recipes_id) references recipe (id)
+2019-07-31 14:54:25.198 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user_recipes add constraint FKpco0pexrpl6x78mtuukwb49g1 foreign key (user_id) references user (id)
+2019-07-31 14:54:25.229  INFO 11336 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-31 14:54:25.262  INFO 11336 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-07-31 14:54:25.712  INFO 11336 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-31 14:54:25.744  WARN 11336 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-31 14:54:25.891  INFO 11336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-07-31 14:54:25.891  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : Started ScannCookBackApplication in 3.367 seconds (JVM running for 3.897)
+2019-07-31 14:55:12.551  INFO 11336 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-31 14:55:12.558  INFO 11336 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-31 14:55:12.581  INFO 11336 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-07-31 14:55:12.592  INFO 11336 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-07-31 14:55:12.881  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : Starting ScannCookBackApplication on LAPTOP-9C0CP4VF with PID 11336 (C:\Dev\ScannCook\ScannCookBack\target\classes started by utilisateur2 in C:\Dev\ScannCook\ScannCookBack)
+2019-07-31 14:55:12.881  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : No active profile set, falling back to default profiles: default
+2019-07-31 14:55:13.035  INFO 11336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-31 14:55:13.055  INFO 11336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20ms. Found 6 repository interfaces.
+2019-07-31 14:55:13.097  INFO 11336 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cb8d9a0c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-31 14:55:13.188  INFO 11336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-07-31 14:55:13.188  INFO 11336 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-31 14:55:13.188  INFO 11336 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-31 14:55:13.204  INFO 11336 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-31 14:55:13.204  INFO 11336 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 322 ms
+2019-07-31 14:55:13.251  INFO 11336 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2019-07-31 14:55:13.254  INFO 11336 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2019-07-31 14:55:13.261  INFO 11336 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-31 14:55:13.270  INFO 11336 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-07-31 14:55:13.385 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table product add constraint FKlq45bcfluf5q235kkyt7n4ar5 foreign key (ingredient_id) references ingredient (id)
+2019-07-31 14:55:13.433 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_tags add constraint FKc61e34yhfyeke62qo2onb9pa8 foreign key (tags_id) references tag (id)
+2019-07-31 14:55:13.477 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_tags add constraint FKm8d9e65tioqhbd8eanewapglx foreign key (recipe_id) references recipe (id)
+2019-07-31 14:55:13.520 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_comment add constraint FK45ojbiwa2a7f83wd54rpwiiku foreign key (author_id) references user (id)
+2019-07-31 14:55:13.563 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table role_permissions add constraint FKclluu29apreb6osx6ogt4qe16 foreign key (permissions_id) references permission (id)
+2019-07-31 14:55:13.603 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table role_permissions add constraint FKlodb7xh4a2xjv39gc3lsop95n foreign key (role_id) references role (id)
+2019-07-31 14:55:13.648 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user add constraint FKn82ha3ccdebhokx3a8fgdqeyy foreign key (role_id) references role (id)
+2019-07-31 14:55:13.703 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user_recipes add constraint FK3fadqc9bwyyhroumcbecbqwpj foreign key (recipes_id) references recipe (id)
+2019-07-31 14:55:13.741 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user_recipes add constraint FKpco0pexrpl6x78mtuukwb49g1 foreign key (user_id) references user (id)
+2019-07-31 14:55:13.774  INFO 11336 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-31 14:55:13.788  INFO 11336 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-07-31 14:55:13.981  INFO 11336 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-31 14:55:13.989  WARN 11336 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-31 14:55:14.076  INFO 11336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-07-31 14:55:14.076  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : Started ScannCookBackApplication in 1.213 seconds (JVM running for 52.074)
+2019-07-31 14:55:14.078  INFO 11336 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-07-31 14:57:19.778  INFO 11336 --- [Thread-11] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-31 14:57:19.786  INFO 11336 --- [Thread-11] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-31 14:57:19.804  INFO 11336 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2019-07-31 14:57:19.826  INFO 11336 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2019-07-31 14:57:20.106  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : Starting ScannCookBackApplication on LAPTOP-9C0CP4VF with PID 11336 (C:\Dev\ScannCook\ScannCookBack\target\classes started by utilisateur2 in C:\Dev\ScannCook\ScannCookBack)
+2019-07-31 14:57:20.106  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : No active profile set, falling back to default profiles: default
+2019-07-31 14:57:20.265  INFO 11336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-31 14:57:20.292  INFO 11336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27ms. Found 6 repository interfaces.
+2019-07-31 14:57:20.347  INFO 11336 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cb8d9a0c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-31 14:57:20.422  INFO 11336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-07-31 14:57:20.422  INFO 11336 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-31 14:57:20.422  INFO 11336 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-31 14:57:20.454  INFO 11336 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-31 14:57:20.454  INFO 11336 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 346 ms
+2019-07-31 14:57:20.492  INFO 11336 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2019-07-31 14:57:20.494  INFO 11336 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2019-07-31 14:57:20.502  INFO 11336 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-31 14:57:20.513  INFO 11336 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-07-31 14:57:20.604 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table product add constraint FKlq45bcfluf5q235kkyt7n4ar5 foreign key (ingredient_id) references ingredient (id)
+2019-07-31 14:57:20.656 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_tags add constraint FKc61e34yhfyeke62qo2onb9pa8 foreign key (tags_id) references tag (id)
+2019-07-31 14:57:20.692 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_tags add constraint FKm8d9e65tioqhbd8eanewapglx foreign key (recipe_id) references recipe (id)
+2019-07-31 14:57:20.741 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_comment add constraint FK45ojbiwa2a7f83wd54rpwiiku foreign key (author_id) references user (id)
+2019-07-31 14:57:20.787 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table role_permissions add constraint FKclluu29apreb6osx6ogt4qe16 foreign key (permissions_id) references permission (id)
+2019-07-31 14:57:20.822 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table role_permissions add constraint FKlodb7xh4a2xjv39gc3lsop95n foreign key (role_id) references role (id)
+2019-07-31 14:57:20.865 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user add constraint FKn82ha3ccdebhokx3a8fgdqeyy foreign key (role_id) references role (id)
+2019-07-31 14:57:20.893 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user_recipes add constraint FK3fadqc9bwyyhroumcbecbqwpj foreign key (recipes_id) references recipe (id)
+2019-07-31 14:57:20.940 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user_recipes add constraint FKpco0pexrpl6x78mtuukwb49g1 foreign key (user_id) references user (id)
+2019-07-31 14:57:20.968  INFO 11336 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-31 14:57:20.987  INFO 11336 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-07-31 14:57:21.159  INFO 11336 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-31 14:57:21.165  WARN 11336 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-31 14:57:21.240  INFO 11336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-07-31 14:57:21.241  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : Started ScannCookBackApplication in 1.152 seconds (JVM running for 179.239)
+2019-07-31 14:57:21.242  INFO 11336 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-07-31 15:00:49.238  INFO 11336 --- [Thread-17] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-31 15:00:49.245  INFO 11336 --- [Thread-17] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-31 15:00:49.264  INFO 11336 --- [Thread-17] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2019-07-31 15:00:49.286  INFO 11336 --- [Thread-17] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2019-07-31 15:00:49.558  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : Starting ScannCookBackApplication on LAPTOP-9C0CP4VF with PID 11336 (C:\Dev\ScannCook\ScannCookBack\target\classes started by utilisateur2 in C:\Dev\ScannCook\ScannCookBack)
+2019-07-31 15:00:49.558  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : No active profile set, falling back to default profiles: default
+2019-07-31 15:00:49.707  INFO 11336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-31 15:00:49.727  INFO 11336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20ms. Found 6 repository interfaces.
+2019-07-31 15:00:49.774  INFO 11336 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cb8d9a0c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-31 15:00:49.877  INFO 11336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-07-31 15:00:49.877  INFO 11336 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-31 15:00:49.877  INFO 11336 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-31 15:00:49.877  INFO 11336 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-31 15:00:49.877  INFO 11336 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 317 ms
+2019-07-31 15:00:49.924  INFO 11336 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2019-07-31 15:00:49.924  INFO 11336 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2019-07-31 15:00:49.924  INFO 11336 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-31 15:00:49.945  INFO 11336 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-07-31 15:00:50.031 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table product add constraint FKlq45bcfluf5q235kkyt7n4ar5 foreign key (ingredient_id) references ingredient (id)
+2019-07-31 15:00:50.078 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_tags add constraint FKc61e34yhfyeke62qo2onb9pa8 foreign key (tags_id) references tag (id)
+2019-07-31 15:00:50.129 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_tags add constraint FKm8d9e65tioqhbd8eanewapglx foreign key (recipe_id) references recipe (id)
+2019-07-31 15:00:50.157 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_comment add constraint FK45ojbiwa2a7f83wd54rpwiiku foreign key (author_id) references user (id)
+2019-07-31 15:00:50.212 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table role_permissions add constraint FKclluu29apreb6osx6ogt4qe16 foreign key (permissions_id) references permission (id)
+2019-07-31 15:00:50.245 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table role_permissions add constraint FKlodb7xh4a2xjv39gc3lsop95n foreign key (role_id) references role (id)
+2019-07-31 15:00:50.286 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user add constraint FKn82ha3ccdebhokx3a8fgdqeyy foreign key (role_id) references role (id)
+2019-07-31 15:00:50.350 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user_recipes add constraint FK3fadqc9bwyyhroumcbecbqwpj foreign key (recipes_id) references recipe (id)
+2019-07-31 15:00:50.385 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user_recipes add constraint FKpco0pexrpl6x78mtuukwb49g1 foreign key (user_id) references user (id)
+2019-07-31 15:00:50.416  INFO 11336 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-31 15:00:50.432  INFO 11336 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-07-31 15:00:50.596  INFO 11336 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-31 15:00:50.602  WARN 11336 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-31 15:00:50.672  INFO 11336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-07-31 15:00:50.672  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : Started ScannCookBackApplication in 1.13 seconds (JVM running for 388.671)
+2019-07-31 15:00:50.672  INFO 11336 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-07-31 15:01:36.276  INFO 11336 --- [Thread-23] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-31 15:01:36.280  INFO 11336 --- [Thread-23] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-31 15:01:36.288  INFO 11336 --- [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2019-07-31 15:01:36.299  INFO 11336 --- [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2019-07-31 15:01:36.563  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : Starting ScannCookBackApplication on LAPTOP-9C0CP4VF with PID 11336 (C:\Dev\ScannCook\ScannCookBack\target\classes started by utilisateur2 in C:\Dev\ScannCook\ScannCookBack)
+2019-07-31 15:01:36.563  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : No active profile set, falling back to default profiles: default
+2019-07-31 15:01:36.703  INFO 11336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-31 15:01:36.723  INFO 11336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20ms. Found 6 repository interfaces.
+2019-07-31 15:01:36.752  INFO 11336 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cb8d9a0c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-31 15:01:36.848  INFO 11336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-07-31 15:01:36.849  INFO 11336 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-31 15:01:36.849  INFO 11336 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-31 15:01:36.852  INFO 11336 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-31 15:01:36.852  INFO 11336 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 288 ms
+2019-07-31 15:01:36.884  INFO 11336 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2019-07-31 15:01:36.884  INFO 11336 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2019-07-31 15:01:36.899  INFO 11336 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-31 15:01:36.915  INFO 11336 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-07-31 15:01:36.986 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table product add constraint FKlq45bcfluf5q235kkyt7n4ar5 foreign key (ingredient_id) references ingredient (id)
+2019-07-31 15:01:37.043 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_tags add constraint FKc61e34yhfyeke62qo2onb9pa8 foreign key (tags_id) references tag (id)
+2019-07-31 15:01:37.080 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_tags add constraint FKm8d9e65tioqhbd8eanewapglx foreign key (recipe_id) references recipe (id)
+2019-07-31 15:01:37.119 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_comment add constraint FK45ojbiwa2a7f83wd54rpwiiku foreign key (author_id) references user (id)
+2019-07-31 15:01:37.157 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table role_permissions add constraint FKclluu29apreb6osx6ogt4qe16 foreign key (permissions_id) references permission (id)
+2019-07-31 15:01:37.192 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table role_permissions add constraint FKlodb7xh4a2xjv39gc3lsop95n foreign key (role_id) references role (id)
+2019-07-31 15:01:37.228 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user add constraint FKn82ha3ccdebhokx3a8fgdqeyy foreign key (role_id) references role (id)
+2019-07-31 15:01:37.281 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user_recipes add constraint FK3fadqc9bwyyhroumcbecbqwpj foreign key (recipes_id) references recipe (id)
+2019-07-31 15:01:37.327 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user_recipes add constraint FKpco0pexrpl6x78mtuukwb49g1 foreign key (user_id) references user (id)
+2019-07-31 15:01:37.357  INFO 11336 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-31 15:01:37.357  INFO 11336 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-07-31 15:01:37.522  INFO 11336 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-31 15:01:37.529  WARN 11336 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-31 15:01:37.608  INFO 11336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-07-31 15:01:37.608  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : Started ScannCookBackApplication in 1.066 seconds (JVM running for 435.606)
+2019-07-31 15:01:37.610  INFO 11336 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-07-31 15:02:14.980  INFO 11336 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-07-31 15:02:14.982  INFO 11336 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-07-31 15:02:14.998  INFO 11336 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2019-07-31 15:02:15.041  INFO 11336 --- [http-nio-8081-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-07-31 15:02:15.089 DEBUG 11336 --- [http-nio-8081-exec-1] org.hibernate.SQL                        : select recipe0_.id as id1_3_, recipe0_.authorid as authorid2_3_, recipe0_.creationdate as creation3_3_, recipe0_.description as descript4_3_, recipe0_.name as name5_3_ from recipe recipe0_
+2019-07-31 15:02:15.120 DEBUG 11336 --- [http-nio-8081-exec-1] org.hibernate.SQL                        : select recipeingr0_.id as id1_6_, recipeingr0_.count as count2_6_, recipeingr0_.ingredient_id as ingredie3_6_, recipeingr0_.recipe_id as recipe_i4_6_, recipeingr0_.unit as unit5_6_ from recipe_ingredient recipeingr0_ where recipeingr0_.recipe_id=?
+2019-07-31 15:02:15.124 DEBUG 11336 --- [http-nio-8081-exec-1] org.hibernate.SQL                        : select recipeingr0_.id as id1_6_, recipeingr0_.count as count2_6_, recipeingr0_.ingredient_id as ingredie3_6_, recipeingr0_.recipe_id as recipe_i4_6_, recipeingr0_.unit as unit5_6_ from recipe_ingredient recipeingr0_ where recipeingr0_.recipe_id=?
+2019-07-31 15:02:15.129 DEBUG 11336 --- [http-nio-8081-exec-1] org.hibernate.SQL                        : select ingredient0_.id as id1_0_0_, ingredient0_.name as name2_0_0_ from ingredient ingredient0_ where ingredient0_.id=?
+2019-07-31 15:02:15.136 DEBUG 11336 --- [http-nio-8081-exec-1] org.hibernate.SQL                        : select ingredient0_.id as id1_0_0_, ingredient0_.name as name2_0_0_ from ingredient ingredient0_ where ingredient0_.id=?
+2019-07-31 15:02:15.138 DEBUG 11336 --- [http-nio-8081-exec-1] org.hibernate.SQL                        : select ingredient0_.id as id1_0_0_, ingredient0_.name as name2_0_0_ from ingredient ingredient0_ where ingredient0_.id=?
+2019-07-31 15:02:15.143 DEBUG 11336 --- [http-nio-8081-exec-1] org.hibernate.SQL                        : select ingredient0_.id as id1_0_0_, ingredient0_.name as name2_0_0_ from ingredient ingredient0_ where ingredient0_.id=?
+2019-07-31 15:02:15.198 DEBUG 11336 --- [http-nio-8081-exec-1] org.hibernate.SQL                        : select tags0_.recipe_id as recipe_i1_4_0_, tags0_.tags_id as tags_id2_4_0_, tag1_.id as id1_9_1_, tag1_.name as name2_9_1_ from recipe_tags tags0_ inner join tag tag1_ on tags0_.tags_id=tag1_.id where tags0_.recipe_id=?
+2019-07-31 15:02:15.207 DEBUG 11336 --- [http-nio-8081-exec-1] org.hibernate.SQL                        : select tags0_.recipe_id as recipe_i1_4_0_, tags0_.tags_id as tags_id2_4_0_, tag1_.id as id1_9_1_, tag1_.name as name2_9_1_ from recipe_tags tags0_ inner join tag tag1_ on tags0_.tags_id=tag1_.id where tags0_.recipe_id=?
+2019-07-31 15:25:23.831  INFO 11336 --- [Thread-29] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-31 15:25:23.833  INFO 11336 --- [Thread-29] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-31 15:25:23.836  INFO 11336 --- [Thread-29] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2019-07-31 15:25:23.867  INFO 11336 --- [Thread-29] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2019-07-31 15:25:24.205  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : Starting ScannCookBackApplication on LAPTOP-9C0CP4VF with PID 11336 (C:\Dev\ScannCook\ScannCookBack\target\classes started by utilisateur2 in C:\Dev\ScannCook\ScannCookBack)
+2019-07-31 15:25:24.206  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : No active profile set, falling back to default profiles: default
+2019-07-31 15:25:24.365  INFO 11336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-31 15:25:24.389  INFO 11336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24ms. Found 6 repository interfaces.
+2019-07-31 15:25:24.431  INFO 11336 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cb8d9a0c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-31 15:25:24.530  INFO 11336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-07-31 15:25:24.531  INFO 11336 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-31 15:25:24.531  INFO 11336 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-31 15:25:24.541  INFO 11336 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-31 15:25:24.541  INFO 11336 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 334 ms
+2019-07-31 15:25:24.576  INFO 11336 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2019-07-31 15:25:24.580  INFO 11336 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2019-07-31 15:25:24.588  INFO 11336 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-31 15:25:24.597  INFO 11336 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-07-31 15:25:24.676 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table product add constraint FKlq45bcfluf5q235kkyt7n4ar5 foreign key (ingredient_id) references ingredient (id)
+2019-07-31 15:25:24.728 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_tags add constraint FKc61e34yhfyeke62qo2onb9pa8 foreign key (tags_id) references tag (id)
+2019-07-31 15:25:24.777 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_tags add constraint FKm8d9e65tioqhbd8eanewapglx foreign key (recipe_id) references recipe (id)
+2019-07-31 15:25:24.819 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_comment add constraint FK45ojbiwa2a7f83wd54rpwiiku foreign key (author_id) references user (id)
+2019-07-31 15:25:24.861 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table role_permissions add constraint FKclluu29apreb6osx6ogt4qe16 foreign key (permissions_id) references permission (id)
+2019-07-31 15:25:24.880 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table role_permissions add constraint FKlodb7xh4a2xjv39gc3lsop95n foreign key (role_id) references role (id)
+2019-07-31 15:25:24.923 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user add constraint FKn82ha3ccdebhokx3a8fgdqeyy foreign key (role_id) references role (id)
+2019-07-31 15:25:24.986 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user_recipes add constraint FK3fadqc9bwyyhroumcbecbqwpj foreign key (recipes_id) references recipe (id)
+2019-07-31 15:25:25.020 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user_recipes add constraint FKpco0pexrpl6x78mtuukwb49g1 foreign key (user_id) references user (id)
+2019-07-31 15:25:25.051  INFO 11336 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-31 15:25:25.071  INFO 11336 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-07-31 15:25:25.252  INFO 11336 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-31 15:25:25.259  WARN 11336 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-31 15:25:25.355  INFO 11336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-07-31 15:25:25.355  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : Started ScannCookBackApplication in 1.167 seconds (JVM running for 1863.353)
+2019-07-31 15:25:25.357  INFO 11336 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-07-31 15:27:05.477  INFO 11336 --- [Thread-35] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-31 15:27:05.483  INFO 11336 --- [Thread-35] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-31 15:27:05.500  INFO 11336 --- [Thread-35] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2019-07-31 15:27:05.517  INFO 11336 --- [Thread-35] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2019-07-31 15:27:05.822  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : Starting ScannCookBackApplication on LAPTOP-9C0CP4VF with PID 11336 (C:\Dev\ScannCook\ScannCookBack\target\classes started by utilisateur2 in C:\Dev\ScannCook\ScannCookBack)
+2019-07-31 15:27:05.822  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : No active profile set, falling back to default profiles: default
+2019-07-31 15:27:05.972  INFO 11336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-31 15:27:05.996  INFO 11336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24ms. Found 6 repository interfaces.
+2019-07-31 15:27:06.028  INFO 11336 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cb8d9a0c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-31 15:27:06.108  INFO 11336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-07-31 15:27:06.109  INFO 11336 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-31 15:27:06.109  INFO 11336 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-31 15:27:06.118  INFO 11336 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-31 15:27:06.118  INFO 11336 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 295 ms
+2019-07-31 15:27:06.153  INFO 11336 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2019-07-31 15:27:06.156  INFO 11336 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2019-07-31 15:27:06.163  INFO 11336 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-31 15:27:06.172  INFO 11336 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-07-31 15:27:06.244 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table product add constraint FKlq45bcfluf5q235kkyt7n4ar5 foreign key (ingredient_id) references ingredient (id)
+2019-07-31 15:27:06.300 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_tags add constraint FKc61e34yhfyeke62qo2onb9pa8 foreign key (tags_id) references tag (id)
+2019-07-31 15:27:06.337 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_tags add constraint FKm8d9e65tioqhbd8eanewapglx foreign key (recipe_id) references recipe (id)
+2019-07-31 15:27:06.378 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_comment add constraint FK45ojbiwa2a7f83wd54rpwiiku foreign key (author_id) references user (id)
+2019-07-31 15:27:06.420 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table role_permissions add constraint FKclluu29apreb6osx6ogt4qe16 foreign key (permissions_id) references permission (id)
+2019-07-31 15:27:06.454 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table role_permissions add constraint FKlodb7xh4a2xjv39gc3lsop95n foreign key (role_id) references role (id)
+2019-07-31 15:27:06.496 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user add constraint FKn82ha3ccdebhokx3a8fgdqeyy foreign key (role_id) references role (id)
+2019-07-31 15:27:06.554 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user_recipes add constraint FK3fadqc9bwyyhroumcbecbqwpj foreign key (recipes_id) references recipe (id)
+2019-07-31 15:27:06.591 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user_recipes add constraint FKpco0pexrpl6x78mtuukwb49g1 foreign key (user_id) references user (id)
+2019-07-31 15:27:06.617  INFO 11336 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-31 15:27:06.636  INFO 11336 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-07-31 15:27:06.789  INFO 11336 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-31 15:27:06.796  WARN 11336 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-31 15:27:06.860  INFO 11336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-07-31 15:27:06.860  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : Started ScannCookBackApplication in 1.053 seconds (JVM running for 1964.865)
+2019-07-31 15:27:06.860  INFO 11336 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-07-31 15:27:44.243  INFO 11336 --- [Thread-41] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-31 15:27:44.246  INFO 11336 --- [Thread-41] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-31 15:27:44.255  INFO 11336 --- [Thread-41] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2019-07-31 15:27:44.262  INFO 11336 --- [Thread-41] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+2019-07-31 15:27:44.561  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : Starting ScannCookBackApplication on LAPTOP-9C0CP4VF with PID 11336 (C:\Dev\ScannCook\ScannCookBack\target\classes started by utilisateur2 in C:\Dev\ScannCook\ScannCookBack)
+2019-07-31 15:27:44.562  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : No active profile set, falling back to default profiles: default
+2019-07-31 15:27:44.707  INFO 11336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-31 15:27:44.728  INFO 11336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21ms. Found 6 repository interfaces.
+2019-07-31 15:27:44.770  INFO 11336 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cb8d9a0c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-31 15:27:44.859  INFO 11336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-07-31 15:27:44.860  INFO 11336 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-31 15:27:44.860  INFO 11336 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-31 15:27:44.869  INFO 11336 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-31 15:27:44.869  INFO 11336 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 306 ms
+2019-07-31 15:27:44.902  INFO 11336 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Starting...
+2019-07-31 15:27:44.904  INFO 11336 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Start completed.
+2019-07-31 15:27:44.911  INFO 11336 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-31 15:27:44.920  INFO 11336 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-07-31 15:27:44.990 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table product add constraint FKlq45bcfluf5q235kkyt7n4ar5 foreign key (ingredient_id) references ingredient (id)
+2019-07-31 15:27:45.057 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_tags add constraint FKc61e34yhfyeke62qo2onb9pa8 foreign key (tags_id) references tag (id)
+2019-07-31 15:27:45.096 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_tags add constraint FKm8d9e65tioqhbd8eanewapglx foreign key (recipe_id) references recipe (id)
+2019-07-31 15:27:45.140 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_comment add constraint FK45ojbiwa2a7f83wd54rpwiiku foreign key (author_id) references user (id)
+2019-07-31 15:27:45.187 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table role_permissions add constraint FKclluu29apreb6osx6ogt4qe16 foreign key (permissions_id) references permission (id)
+2019-07-31 15:27:45.221 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table role_permissions add constraint FKlodb7xh4a2xjv39gc3lsop95n foreign key (role_id) references role (id)
+2019-07-31 15:27:45.262 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user add constraint FKn82ha3ccdebhokx3a8fgdqeyy foreign key (role_id) references role (id)
+2019-07-31 15:27:45.324 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user_recipes add constraint FK3fadqc9bwyyhroumcbecbqwpj foreign key (recipes_id) references recipe (id)
+2019-07-31 15:27:45.363 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user_recipes add constraint FKpco0pexrpl6x78mtuukwb49g1 foreign key (user_id) references user (id)
+2019-07-31 15:27:45.387  INFO 11336 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-31 15:27:45.402  INFO 11336 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-07-31 15:27:45.575  INFO 11336 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-31 15:27:45.583  WARN 11336 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-31 15:27:45.663  INFO 11336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-07-31 15:27:45.663  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : Started ScannCookBackApplication in 1.118 seconds (JVM running for 2003.668)
+2019-07-31 15:27:45.663  INFO 11336 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-07-31 15:28:53.955  INFO 11336 --- [Thread-47] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-31 15:28:53.961  INFO 11336 --- [Thread-47] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-31 15:28:53.978  INFO 11336 --- [Thread-47] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...
+2019-07-31 15:28:53.995  INFO 11336 --- [Thread-47] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.
+2019-07-31 15:28:54.317  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : Starting ScannCookBackApplication on LAPTOP-9C0CP4VF with PID 11336 (C:\Dev\ScannCook\ScannCookBack\target\classes started by utilisateur2 in C:\Dev\ScannCook\ScannCookBack)
+2019-07-31 15:28:54.318  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : No active profile set, falling back to default profiles: default
+2019-07-31 15:28:54.467  INFO 11336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-31 15:28:54.491  INFO 11336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24ms. Found 6 repository interfaces.
+2019-07-31 15:28:54.522  INFO 11336 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cb8d9a0c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-31 15:28:54.606  INFO 11336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-07-31 15:28:54.607  INFO 11336 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-31 15:28:54.607  INFO 11336 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-31 15:28:54.616  INFO 11336 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-31 15:28:54.616  INFO 11336 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 297 ms
+2019-07-31 15:28:54.650  INFO 11336 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Starting...
+2019-07-31 15:28:54.652  INFO 11336 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Start completed.
+2019-07-31 15:28:54.657  INFO 11336 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-31 15:28:54.657  INFO 11336 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-07-31 15:28:54.748 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table product add constraint FKlq45bcfluf5q235kkyt7n4ar5 foreign key (ingredient_id) references ingredient (id)
+2019-07-31 15:28:54.814 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_tags add constraint FKc61e34yhfyeke62qo2onb9pa8 foreign key (tags_id) references tag (id)
+2019-07-31 15:28:54.843 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_tags add constraint FKm8d9e65tioqhbd8eanewapglx foreign key (recipe_id) references recipe (id)
+2019-07-31 15:28:54.892 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_comment add constraint FK45ojbiwa2a7f83wd54rpwiiku foreign key (author_id) references user (id)
+2019-07-31 15:28:54.937 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table role_permissions add constraint FKclluu29apreb6osx6ogt4qe16 foreign key (permissions_id) references permission (id)
+2019-07-31 15:28:54.972 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table role_permissions add constraint FKlodb7xh4a2xjv39gc3lsop95n foreign key (role_id) references role (id)
+2019-07-31 15:28:55.014 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user add constraint FKn82ha3ccdebhokx3a8fgdqeyy foreign key (role_id) references role (id)
+2019-07-31 15:28:55.060 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user_recipes add constraint FK3fadqc9bwyyhroumcbecbqwpj foreign key (recipes_id) references recipe (id)
+2019-07-31 15:28:55.096 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user_recipes add constraint FKpco0pexrpl6x78mtuukwb49g1 foreign key (user_id) references user (id)
+2019-07-31 15:28:55.122  INFO 11336 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-31 15:28:55.137  INFO 11336 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-07-31 15:28:55.305  INFO 11336 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-31 15:28:55.311  WARN 11336 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-31 15:28:55.380  INFO 11336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-07-31 15:28:55.380  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : Started ScannCookBackApplication in 1.078 seconds (JVM running for 2073.379)
+2019-07-31 15:28:55.382  INFO 11336 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-07-31 15:29:24.573  INFO 11336 --- [Thread-53] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-31 15:29:24.574  INFO 11336 --- [Thread-53] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-31 15:29:24.580  INFO 11336 --- [Thread-53] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown initiated...
+2019-07-31 15:29:24.586  INFO 11336 --- [Thread-53] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown completed.
+2019-07-31 15:29:24.818  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : Starting ScannCookBackApplication on LAPTOP-9C0CP4VF with PID 11336 (C:\Dev\ScannCook\ScannCookBack\target\classes started by utilisateur2 in C:\Dev\ScannCook\ScannCookBack)
+2019-07-31 15:29:24.818  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : No active profile set, falling back to default profiles: default
+2019-07-31 15:29:24.958  INFO 11336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-31 15:29:24.977  INFO 11336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18ms. Found 6 repository interfaces.
+2019-07-31 15:29:25.005  INFO 11336 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cb8d9a0c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-31 15:29:25.089  INFO 11336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-07-31 15:29:25.089  INFO 11336 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-31 15:29:25.089  INFO 11336 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-31 15:29:25.098  INFO 11336 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-31 15:29:25.098  INFO 11336 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 278 ms
+2019-07-31 15:29:25.136  INFO 11336 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Starting...
+2019-07-31 15:29:25.140  INFO 11336 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Start completed.
+2019-07-31 15:29:25.148  INFO 11336 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-31 15:29:25.157  INFO 11336 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-07-31 15:29:25.211 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table product add constraint FKlq45bcfluf5q235kkyt7n4ar5 foreign key (ingredient_id) references ingredient (id)
+2019-07-31 15:29:25.267 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_tags add constraint FKc61e34yhfyeke62qo2onb9pa8 foreign key (tags_id) references tag (id)
+2019-07-31 15:29:25.307 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_tags add constraint FKm8d9e65tioqhbd8eanewapglx foreign key (recipe_id) references recipe (id)
+2019-07-31 15:29:25.347 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_comment add constraint FK45ojbiwa2a7f83wd54rpwiiku foreign key (author_id) references user (id)
+2019-07-31 15:29:25.387 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table role_permissions add constraint FKclluu29apreb6osx6ogt4qe16 foreign key (permissions_id) references permission (id)
+2019-07-31 15:29:25.417 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table role_permissions add constraint FKlodb7xh4a2xjv39gc3lsop95n foreign key (role_id) references role (id)
+2019-07-31 15:29:25.459 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user add constraint FKn82ha3ccdebhokx3a8fgdqeyy foreign key (role_id) references role (id)
+2019-07-31 15:29:25.508 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user_recipes add constraint FK3fadqc9bwyyhroumcbecbqwpj foreign key (recipes_id) references recipe (id)
+2019-07-31 15:29:25.544 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user_recipes add constraint FKpco0pexrpl6x78mtuukwb49g1 foreign key (user_id) references user (id)
+2019-07-31 15:29:25.571  INFO 11336 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-31 15:29:25.587  INFO 11336 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-07-31 15:29:25.748  INFO 11336 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-31 15:29:25.754  WARN 11336 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-31 15:29:25.825  INFO 11336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-07-31 15:29:25.825  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : Started ScannCookBackApplication in 1.022 seconds (JVM running for 2103.823)
+2019-07-31 15:29:25.826  INFO 11336 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-07-31 15:29:30.342  INFO 11336 --- [Thread-59] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-31 15:29:30.348  INFO 11336 --- [Thread-59] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-31 15:29:30.367  INFO 11336 --- [Thread-59] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown initiated...
+2019-07-31 15:29:30.384  INFO 11336 --- [Thread-59] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown completed.
+2019-07-31 15:29:30.633  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : Starting ScannCookBackApplication on LAPTOP-9C0CP4VF with PID 11336 (C:\Dev\ScannCook\ScannCookBack\target\classes started by utilisateur2 in C:\Dev\ScannCook\ScannCookBack)
+2019-07-31 15:29:30.633  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : No active profile set, falling back to default profiles: default
+2019-07-31 15:29:30.768  INFO 11336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-31 15:29:30.786  INFO 11336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18ms. Found 6 repository interfaces.
+2019-07-31 15:29:30.815  INFO 11336 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cb8d9a0c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-31 15:29:30.902  INFO 11336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-07-31 15:29:30.903  INFO 11336 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-31 15:29:30.903  INFO 11336 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-31 15:29:30.912  INFO 11336 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-31 15:29:30.912  INFO 11336 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 278 ms
+2019-07-31 15:29:30.950  INFO 11336 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Starting...
+2019-07-31 15:29:30.952  INFO 11336 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Start completed.
+2019-07-31 15:29:30.960  INFO 11336 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-31 15:29:30.969  INFO 11336 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-07-31 15:29:31.028 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table product add constraint FKlq45bcfluf5q235kkyt7n4ar5 foreign key (ingredient_id) references ingredient (id)
+2019-07-31 15:29:31.076 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_tags add constraint FKc61e34yhfyeke62qo2onb9pa8 foreign key (tags_id) references tag (id)
+2019-07-31 15:29:31.114 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_tags add constraint FKm8d9e65tioqhbd8eanewapglx foreign key (recipe_id) references recipe (id)
+2019-07-31 15:29:31.157 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_comment add constraint FK45ojbiwa2a7f83wd54rpwiiku foreign key (author_id) references user (id)
+2019-07-31 15:29:31.184 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table role_permissions add constraint FKclluu29apreb6osx6ogt4qe16 foreign key (permissions_id) references permission (id)
+2019-07-31 15:29:31.216 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table role_permissions add constraint FKlodb7xh4a2xjv39gc3lsop95n foreign key (role_id) references role (id)
+2019-07-31 15:29:31.268 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user add constraint FKn82ha3ccdebhokx3a8fgdqeyy foreign key (role_id) references role (id)
+2019-07-31 15:29:31.316 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user_recipes add constraint FK3fadqc9bwyyhroumcbecbqwpj foreign key (recipes_id) references recipe (id)
+2019-07-31 15:29:31.350 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user_recipes add constraint FKpco0pexrpl6x78mtuukwb49g1 foreign key (user_id) references user (id)
+2019-07-31 15:29:31.375  INFO 11336 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-31 15:29:31.390  INFO 11336 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-07-31 15:29:31.547  INFO 11336 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-31 15:29:31.552  WARN 11336 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-31 15:29:31.614  INFO 11336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-07-31 15:29:31.614  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : Started ScannCookBackApplication in 0.997 seconds (JVM running for 2109.612)
+2019-07-31 15:29:31.616  INFO 11336 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-07-31 15:29:52.958  INFO 11336 --- [Thread-65] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-31 15:29:52.962  INFO 11336 --- [Thread-65] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-31 15:29:52.979  INFO 11336 --- [Thread-65] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Shutdown initiated...
+2019-07-31 15:29:52.994  INFO 11336 --- [Thread-65] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Shutdown completed.
+2019-07-31 15:29:53.255  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : Starting ScannCookBackApplication on LAPTOP-9C0CP4VF with PID 11336 (C:\Dev\ScannCook\ScannCookBack\target\classes started by utilisateur2 in C:\Dev\ScannCook\ScannCookBack)
+2019-07-31 15:29:53.255  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : No active profile set, falling back to default profiles: default
+2019-07-31 15:29:53.387  INFO 11336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-31 15:29:53.407  INFO 11336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19ms. Found 6 repository interfaces.
+2019-07-31 15:29:53.435  INFO 11336 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cb8d9a0c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-31 15:29:53.528  INFO 11336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-07-31 15:29:53.529  INFO 11336 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-31 15:29:53.529  INFO 11336 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-31 15:29:53.537  INFO 11336 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-31 15:29:53.537  INFO 11336 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 281 ms
+2019-07-31 15:29:53.574  INFO 11336 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Starting...
+2019-07-31 15:29:53.576  INFO 11336 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Start completed.
+2019-07-31 15:29:53.585  INFO 11336 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-31 15:29:53.595  INFO 11336 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-07-31 15:29:53.657 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table product add constraint FKlq45bcfluf5q235kkyt7n4ar5 foreign key (ingredient_id) references ingredient (id)
+2019-07-31 15:29:53.706 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_tags add constraint FKc61e34yhfyeke62qo2onb9pa8 foreign key (tags_id) references tag (id)
+2019-07-31 15:29:53.757 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_tags add constraint FKm8d9e65tioqhbd8eanewapglx foreign key (recipe_id) references recipe (id)
+2019-07-31 15:29:53.802 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_comment add constraint FK45ojbiwa2a7f83wd54rpwiiku foreign key (author_id) references user (id)
+2019-07-31 15:29:53.847 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table role_permissions add constraint FKclluu29apreb6osx6ogt4qe16 foreign key (permissions_id) references permission (id)
+2019-07-31 15:29:53.879 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table role_permissions add constraint FKlodb7xh4a2xjv39gc3lsop95n foreign key (role_id) references role (id)
+2019-07-31 15:29:53.927 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user add constraint FKn82ha3ccdebhokx3a8fgdqeyy foreign key (role_id) references role (id)
+2019-07-31 15:29:53.973 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user_recipes add constraint FK3fadqc9bwyyhroumcbecbqwpj foreign key (recipes_id) references recipe (id)
+2019-07-31 15:29:54.006 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user_recipes add constraint FKpco0pexrpl6x78mtuukwb49g1 foreign key (user_id) references user (id)
+2019-07-31 15:29:54.039  INFO 11336 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-31 15:29:54.055  INFO 11336 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-07-31 15:29:54.223  INFO 11336 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-31 15:29:54.230  WARN 11336 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-31 15:29:54.300  INFO 11336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-07-31 15:29:54.301  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : Started ScannCookBackApplication in 1.065 seconds (JVM running for 2132.299)
+2019-07-31 15:29:54.302  INFO 11336 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-07-31 15:45:10.262  INFO 11336 --- [Thread-71] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-31 15:45:10.267  INFO 11336 --- [Thread-71] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-31 15:45:10.285  INFO 11336 --- [Thread-71] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Shutdown initiated...
+2019-07-31 15:45:10.298  INFO 11336 --- [Thread-71] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Shutdown completed.
+2019-07-31 15:45:10.606  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : Starting ScannCookBackApplication on LAPTOP-9C0CP4VF with PID 11336 (C:\Dev\ScannCook\ScannCookBack\target\classes started by utilisateur2 in C:\Dev\ScannCook\ScannCookBack)
+2019-07-31 15:45:10.606  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : No active profile set, falling back to default profiles: default
+2019-07-31 15:45:10.751  INFO 11336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-31 15:45:10.774  INFO 11336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23ms. Found 6 repository interfaces.
+2019-07-31 15:45:10.808  INFO 11336 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cb8d9a0c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-31 15:45:10.891  INFO 11336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-07-31 15:45:10.891  INFO 11336 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-31 15:45:10.891  INFO 11336 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-31 15:45:10.891  INFO 11336 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-31 15:45:10.891  INFO 11336 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 283 ms
+2019-07-31 15:45:10.938  INFO 11336 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Starting...
+2019-07-31 15:45:10.938  INFO 11336 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Start completed.
+2019-07-31 15:45:10.938  INFO 11336 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-31 15:45:10.959  INFO 11336 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-07-31 15:45:11.021 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe add column note float not null
+2019-07-31 15:45:11.101 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table product add constraint FKlq45bcfluf5q235kkyt7n4ar5 foreign key (ingredient_id) references ingredient (id)
+2019-07-31 15:45:11.144 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_tags add constraint FKc61e34yhfyeke62qo2onb9pa8 foreign key (tags_id) references tag (id)
+2019-07-31 15:45:11.172 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_tags add constraint FKm8d9e65tioqhbd8eanewapglx foreign key (recipe_id) references recipe (id)
+2019-07-31 15:45:11.215 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table recipe_comment add constraint FK45ojbiwa2a7f83wd54rpwiiku foreign key (author_id) references user (id)
+2019-07-31 15:45:11.260 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table role_permissions add constraint FKclluu29apreb6osx6ogt4qe16 foreign key (permissions_id) references permission (id)
+2019-07-31 15:45:11.291 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table role_permissions add constraint FKlodb7xh4a2xjv39gc3lsop95n foreign key (role_id) references role (id)
+2019-07-31 15:45:11.334 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user add constraint FKn82ha3ccdebhokx3a8fgdqeyy foreign key (role_id) references role (id)
+2019-07-31 15:45:11.372 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user_recipes add constraint FK3fadqc9bwyyhroumcbecbqwpj foreign key (recipes_id) references recipe (id)
+2019-07-31 15:45:11.404 DEBUG 11336 --- [restartedMain] org.hibernate.SQL                        : alter table user_recipes add constraint FKpco0pexrpl6x78mtuukwb49g1 foreign key (user_id) references user (id)
+2019-07-31 15:45:11.445  INFO 11336 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-31 15:45:11.460  INFO 11336 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-07-31 15:45:11.623  INFO 11336 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-31 15:45:11.630  WARN 11336 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-31 15:45:11.704  INFO 11336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-07-31 15:45:11.704  INFO 11336 --- [restartedMain] com.scanncook.ScannCookBackApplication   : Started ScannCookBackApplication in 1.113 seconds (JVM running for 3049.703)
+2019-07-31 15:45:11.704  INFO 11336 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-07-31 16:12:14.805  WARN 11336 --- [HikariPool-13 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-13 - Thread starvation or clock leap detected (housekeeper delta=24m3s766ms359µs622ns).
+2019-07-31 16:47:12.052  INFO 11336 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-07-31 16:47:12.059  INFO 11336 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-07-31 16:47:12.078  INFO 11336 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 19 ms
+2019-07-31 16:47:12.100  INFO 11336 --- [http-nio-8081-exec-2] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-07-31 16:47:12.114 DEBUG 11336 --- [http-nio-8081-exec-2] org.hibernate.SQL                        : select recipe0_.id as id1_3_, recipe0_.authorid as authorid2_3_, recipe0_.creationdate as creation3_3_, recipe0_.description as descript4_3_, recipe0_.name as name5_3_, recipe0_.note as note6_3_ from recipe recipe0_
+2019-07-31 16:47:12.131 DEBUG 11336 --- [http-nio-8081-exec-2] org.hibernate.SQL                        : select recipeingr0_.id as id1_6_, recipeingr0_.count as count2_6_, recipeingr0_.ingredient_id as ingredie3_6_, recipeingr0_.recipe_id as recipe_i4_6_, recipeingr0_.unit as unit5_6_ from recipe_ingredient recipeingr0_ where recipeingr0_.recipe_id=?
+2019-07-31 16:47:12.132 DEBUG 11336 --- [http-nio-8081-exec-2] org.hibernate.SQL                        : select recipeingr0_.id as id1_6_, recipeingr0_.count as count2_6_, recipeingr0_.ingredient_id as ingredie3_6_, recipeingr0_.recipe_id as recipe_i4_6_, recipeingr0_.unit as unit5_6_ from recipe_ingredient recipeingr0_ where recipeingr0_.recipe_id=?
+2019-07-31 16:47:12.134 DEBUG 11336 --- [http-nio-8081-exec-2] org.hibernate.SQL                        : select ingredient0_.id as id1_0_0_, ingredient0_.name as name2_0_0_ from ingredient ingredient0_ where ingredient0_.id=?
+2019-07-31 16:47:12.145 DEBUG 11336 --- [http-nio-8081-exec-2] org.hibernate.SQL                        : select ingredient0_.id as id1_0_0_, ingredient0_.name as name2_0_0_ from ingredient ingredient0_ where ingredient0_.id=?
+2019-07-31 16:47:12.147 DEBUG 11336 --- [http-nio-8081-exec-2] org.hibernate.SQL                        : select ingredient0_.id as id1_0_0_, ingredient0_.name as name2_0_0_ from ingredient ingredient0_ where ingredient0_.id=?
+2019-07-31 16:47:12.148 DEBUG 11336 --- [http-nio-8081-exec-2] org.hibernate.SQL                        : select ingredient0_.id as id1_0_0_, ingredient0_.name as name2_0_0_ from ingredient ingredient0_ where ingredient0_.id=?
+2019-07-31 16:47:12.163 DEBUG 11336 --- [http-nio-8081-exec-2] org.hibernate.SQL                        : select tags0_.recipe_id as recipe_i1_4_0_, tags0_.tags_id as tags_id2_4_0_, tag1_.id as id1_9_1_, tag1_.name as name2_9_1_ from recipe_tags tags0_ inner join tag tag1_ on tags0_.tags_id=tag1_.id where tags0_.recipe_id=?
+2019-07-31 16:47:12.167 DEBUG 11336 --- [http-nio-8081-exec-2] org.hibernate.SQL                        : select tags0_.recipe_id as recipe_i1_4_0_, tags0_.tags_id as tags_id2_4_0_, tag1_.id as id1_9_1_, tag1_.name as name2_9_1_ from recipe_tags tags0_ inner join tag tag1_ on tags0_.tags_id=tag1_.id where tags0_.recipe_id=?

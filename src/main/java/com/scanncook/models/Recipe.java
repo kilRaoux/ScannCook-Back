@@ -32,6 +32,7 @@ public class Recipe {
 	@NotNull
 	private String name;
 	private String description;
+	private float note;
 	
 	//@ManyToOne
 	private long authorid;
