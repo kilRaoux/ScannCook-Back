@@ -9,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 
@@ -37,13 +39,13 @@ public class Recipe {
 	@CreatedDate
 	private Date creationdate;
 	
+	@OneToMany(cascade=CascadeType.ALL)
+	private List<Step> steps;
+	
 	@Transient
 	private List<RecipeIngredient> ingredients;
 	
-	@ManyToMany(cascade = {
-            CascadeType.PERSIST,
-            CascadeType.MERGE
-        })
+	@ManyToMany(cascade=CascadeType.ALL)
 	private List<Tag> tags;
 	
 	@Transient
