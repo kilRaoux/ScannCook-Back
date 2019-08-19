@@ -79,4 +79,9 @@ public class RecipeServiceImpl implements RecipeService{
 		else
 			return new ArrayList<Tag>();
 	}
+
+	public void update(Recipe recipe) {
+		recipeRepository.delete(recipe);
+		recipeRepository.save(recipe);
+	}
 }

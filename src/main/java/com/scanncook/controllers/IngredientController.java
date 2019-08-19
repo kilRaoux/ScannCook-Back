@@ -29,5 +29,11 @@ public class IngredientController {
 		ingredientService.save(ingredient);
 	}
 	
+	@GetMapping("codebar")
+	public Ingredient findByCodebar(@RequestBody String codebar) {
+		return ingredientService.findByCodebar(codebar);
+		
+	}
+	
 	
 }
